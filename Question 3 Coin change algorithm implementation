@@ -1,0 +1,19 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+int getWays(int amount, vector<int>& coins) {
+ vector<int> dp(amount + 1, 0); // O(n)
+ dp[0] = 1;
+ for (int coin : coins) { // O(m)
+ for (int i = coin; i <= amount; i++) { // O(n)
+ dp[i] += dp[i - coin]; // O(1)
+ }
+ }
+ return dp[amount]; // O(1)
+}
+int main() {
+ vector<int> coins = {1, 2, 3}; // O(m)
+ int amount = 4;
+ cout << getWays(amount, coins) << endl; // O(1)
+ return 0; // O(1)
+}
