@@ -33,11 +33,11 @@ void printPath(vector<Node*> path) {
 }
 int main() {
  Node* root = newNode(1); // O(1
-root->left = newNode(2);
- root->right = newNode(3);
- root->left->left = newNode(4);
- root->right->left = newNode(5);
- root->right->right = newNode(6);
+root->left = newNode(2); // O(1)
+ root->right = newNode(3); // O(1)
+ root->left->left = newNode(4); // O(1)
+ root->right->left = newNode(5); // O(1)
+ root->right->right = newNode(6); // O(1)
  int target = 5;
  vector<Node*> path;
  if (findNode(root, target, path)) {
